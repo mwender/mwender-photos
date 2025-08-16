@@ -26,10 +26,3 @@ Config::define('DISABLED_PLUGINS', [
     'spinupwp/spinupwp.php',
     'limit-login-attempts-reloaded/limit-login-attempts-reloaded.php',
 ]);
-
-add_filter( 'upload_dir', function( $dirs ) {
-  if ( defined( 'REMOTE_BASEURL' ) && REMOTE_BASEURL ) {
-    $dirs['baseurl'] = REMOTE_BASEURL;
-  }
-  return $dirs;
-} );
