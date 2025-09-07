@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ce7640d5060ee3f4006b9fe4a3a83bf",
+    "content-hash": "fad14849fa3b62cc02723fd14962fc06",
     "packages": [
         {
             "name": "composer/installers",
@@ -1120,6 +1120,24 @@
             ],
             "description": "The most powerful Code Snippets Manager for WordPress.",
             "homepage": "https://wpcodebox.com"
+        },
+        {
+            "name": "wpackagist-plugin/api-for-htmx",
+            "version": "2.0.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/api-for-htmx/",
+                "reference": "tags/2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/api-for-htmx.2.0.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/api-for-htmx/"
         },
         {
             "name": "wpackagist-plugin/elementor",
