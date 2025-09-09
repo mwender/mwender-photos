@@ -42,7 +42,7 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
       'previous_post_id'  => ( $previous_post instanceof WP_Post ) ? $previous_post->ID : null,
       'random_post_id'    => get_random_post_id( array( $previous_post_id, $next_post_id ) ),
       'next_post_id'      => ( $next_post instanceof WP_Post ) ? $next_post->ID : null,
-    ],
+    ],    
   ];
 
   wp_reset_postdata();
@@ -53,6 +53,20 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
     <h1 class="post-title"><?= $post_data['title'] ?></h1>
     <?= $post_data['thumbnail'] ?>
     <?= $post_data['content'] ?>
+    <div class="post-info">
+      <p>
+        <strong><?= esc_html( $post_data['title'] ); ?></strong> 
+        was posted on 
+        <time><strong><?= esc_html( get_the_date( 'F j, Y', $post ) ); ?></strong></time>.
+      </p>
+
+      <?php
+      $tags_list = get_the_term_list( $post->ID, 'post_tag', 'Tagged ', ', ' );
+      if ( $tags_list ) :
+        echo '<p>' . $tags_list . '</p>';
+      endif;
+      ?>
+    </div>
   </div>
   <div id="photo-nav">
     <?php 

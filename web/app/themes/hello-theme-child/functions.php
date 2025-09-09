@@ -41,11 +41,12 @@ function hello_elementor_child_scripts_styles() {
 		[
 			'hello-elementor-theme-style',
 		],
-		HELLO_ELEMENTOR_CHILD_VERSION
+		filemtime( get_stylesheet_directory() . '/style.css' )
 	); 
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20 );
 
 require_once plugin_dir_path( __FILE__ ) . '/lib/elementor.dynamic-tag.latest-post-id.php';
 require_once plugin_dir_path( __FILE__ ) . '/lib/shortcode.nav_button.php';
+require_once plugin_dir_path( __FILE__ ) . '/lib/shortcode.photo-viewer.php';
 require_once plugin_dir_path( __FILE__ ) . '/lib/utilities.php';

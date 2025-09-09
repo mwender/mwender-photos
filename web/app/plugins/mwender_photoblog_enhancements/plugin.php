@@ -30,5 +30,5 @@ include_once 'snippets/post_streak_shortcode.php';
 include_once 'snippets/latest_post_id.php';
 include_once 'snippets/current_post_id_shortcode.php';
 include_once 'snippets/uber_log.php';
-include_once 'snippets/photo_viewer.php';
+// include_once 'snippets/photo_viewer.php';
 // Snippets will go before this line, do not edit
