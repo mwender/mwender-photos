@@ -70,14 +70,12 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
       <p>
         <strong><?= esc_html( $post_data['title'] ); ?></strong> 
         was posted on 
-        <time><strong><?= esc_html( get_the_date( 'F j, Y', $post ) ); ?></strong></time>.
+        <time><strong><?= esc_html( get_the_date( 'F j, Y', $hmvals['post_id'] ) ); ?></strong></time>.
       </p>
 
       <?php
-      $tags_list = get_the_term_list( $post->ID, 'post_tag', 'Tagged ', ', ' );
-      if ( $tags_list ) :
-        echo '<p>' . $tags_list . '</p>';
-      endif;
+      $tags_list = get_the_term_list( $hmvals['post_id'], 'post_tag', 'Tagged ', ', ' );
+      echo ( $tags_list )? '<p>' . $tags_list . '</p>' : '<p><!-- no tags --></p>' ;
       ?>
     </div>
   </div>
