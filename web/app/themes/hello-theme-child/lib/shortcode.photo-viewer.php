@@ -41,14 +41,39 @@ function photo_viewer_shortcode( $atts ) {
     }
 
     ob_start();
-    ?>    
+    ?>   
+<script>
+  document.addEventListener("htmx:beforeRequest", function (evt) {
+    const target = evt.detail.target; // actual swap target
+
+    if (target && target.id === "photo-viewer") {
+      const content = document.querySelector("#photo-viewer-content");
+      if (content) {
+        content.style.display = "none";
+      } 
+    }
+  });
+
+  document.addEventListener("htmx:afterSwap", function (evt) {
+    const target = evt.detail.target;
+    if (target && target.id === "photo-viewer") {
+      const content = document.querySelector("#photo-viewer-content");
+      if (content) {
+        content.style.display = "";
+      }
+    }
+  });
+</script>
+
+
+
     <div id="photo-viewer" 
       hx-get="<?php echo esc_url( "/wp-html/v1/getpost?post_id={$post_id}" ); ?>" 
       hx-trigger="load"
       hx-indicator="#photo-skeleton">
-      
+
       <div id="photo-skeleton" class="htmx-indicator">
-        <div id="photo-viewer-content">
+        <!--<div id="photo-viewer-content">-->
           <h1 class="post-title skeleton" style="width: 50%; margin-left: auto; margin-right: auto;"></h1>
           <div class="skeleton" style="height: 420px; margin-bottom: 2rem;"></div>
           <p class="skeleton"></p>
@@ -58,7 +83,7 @@ function photo_viewer_shortcode( $atts ) {
               <p class="skeleton" style="width: 55%;"></p>
               <p class="skeleton" style="width: 20%;"></p>
           </div>
-        </div>
+        <!--</div>-->
       </div>   
 
     </div>

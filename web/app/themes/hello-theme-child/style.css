@@ -51,6 +51,8 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 }
 
 #photo-viewer #photo-skeleton{
+	max-width: 800px;
+	margin: 50px auto;
 	display: none;
 }
 #photo-viewer .htmx-request#photo-skeleton{
