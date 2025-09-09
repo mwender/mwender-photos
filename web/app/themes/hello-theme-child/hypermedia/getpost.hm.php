@@ -48,7 +48,20 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
   wp_reset_postdata();
 }
 ?>
-<div id="photo-viewer">
+  <div id="photo-skeleton" class="htmx-indicator">
+    <div id="photo-viewer-content">
+      <h1 class="post-title skeleton" style="width: 50%; margin-left: auto; margin-right: auto;"></h1>
+      <div class="skeleton" style="height: 420px; margin-bottom: 2rem;"></div>
+      <p class="skeleton"></p>
+      <p class="skeleton" style="width: 75%;"></p>
+      <p class="skeleton" style="width: 80%;"></p>
+      <div class="post-info">
+          <p class="skeleton" style="width: 55%;"></p>
+          <p class="skeleton" style="width: 20%;"></p>
+      </div>
+    </div>
+  </div>   
+
   <div id="photo-viewer-content">
     <h1 class="post-title"><?= $post_data['title'] ?></h1>
     <?= $post_data['thumbnail'] ?>
@@ -83,6 +96,3 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
     }
     ?>
   </div>
-</div>
-
-
