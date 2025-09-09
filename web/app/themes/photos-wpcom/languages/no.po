@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Photos\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-04-17T03:28:04+00:00\n"
+"PO-Revision-Date: 2018-12-10 02:03:07+0000\n"
+"Language: no\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:30
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Fortsett å lese<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content-page.php:24
+#: template-parts/content.php:41
+msgid "Pages:"
+msgstr "Sider:"
+
+#: template-parts/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Vi klarer ikke å finne det du leter etter. Kanskje det kan hjelpe å søke."
+
+#: template-parts/content-none.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Beklager, søket ditt ga ingen resultater. Prøv igjen med andre søkeord."
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Klar for å publisere ditt første innlegg? <a href=\"%1$s\">Kom i gang her</a>."
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Ingenting funnet"
+
+#: searchform.php:15
+msgctxt "submit button"
+msgid "Search"
+msgstr "Søk"
+
+#: searchform.php:14
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Søk &hellip;"
+
+#: searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr "Merke"
+
+#. translators: %s: search query.
+#: search.php:22
+msgid "Search Results for: %s"
+msgstr "Søkeresultater for: %s"
+
+#: index.php:40
+#: search.php:43
+msgid "Newer Posts"
+msgstr "Nyere innlegg"
+
+#: index.php:39
+#: search.php:42
+msgid "Older Posts"
+msgstr "Eldre innlegg"
+
+#: inc/wpcom-colors.php:218
+msgid "Headings"
+msgstr "Overskrifter"
+
+#: inc/wpcom-colors.php:66
+msgid "Links and Buttons"
+msgstr "Lenker og knapper"
+
+#: inc/template-tags.php:196
+msgid "Post navigation"
+msgstr "Innleggsnavigasjon"
+
+#: inc/template-tags.php:187
+#: inc/template-tags.php:189
+msgid "Next Post"
+msgstr "Neste innlegg"
+
+#: inc/template-tags.php:178
+#: inc/template-tags.php:180
+msgid "Previous Post"
+msgstr "Forrige innlegg"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:101
+#: template-parts/content-page.php:39
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Rediger <span class=\"screen-reader-text\">%s</span>"
+
+#. translators: %s: post title
+#: inc/template-tags.php:76
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Legg igjen en kommentar<span class=\"screen-reader-text\"> på %s</span>"
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:66
+msgid "Tagged %1$s"
+msgstr "Stikkord %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:63
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:59
+msgid "Posted in %1$s"
+msgstr "Publisert under %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:56
+msgid ", "
+msgstr ", "
+
+#. translators: %s: post author.
+#: inc/template-tags.php:39
+msgctxt "post author"
+msgid "By %s"
+msgstr "av %s"
+
+#: inc/template-tags.php:27
+msgctxt "post date"
+msgid "Posted on"
+msgstr "Publisert den"
+
+#: inc/logo-resizer.php:17
+msgid "Logo Size"
+msgstr "Logostørrelse"
+
+#: inc/icon-functions.php:147
+msgid "Password Protected"
+msgstr "Passordbeskyttet"
+
+#: inc/icon-functions.php:144
+msgid "Featured"
+msgstr "Fremhevet"
+
+#: inc/icon-functions.php:40
+msgid "Please define an SVG icon filename."
+msgstr "Vennligst bestem et SVG-ikonfilnavn."
+
+#: inc/icon-functions.php:35
+msgid "Please define default parameters in the form of an array."
+msgstr "Vennligst bestem standardparameterene i form av en rekke."
+
+#: header.php:59
+msgid "Menu"
+msgstr "Meny"
+
+#: header.php:55
+msgid "Close Menu"
+msgstr "Lukk meny"
+
+#: header.php:54
+msgid "Open Menu"
+msgstr "Åpne menyen"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "Gå til innhold"
+
+#: functions.php:201
+msgid "Collapse child menu"
+msgstr "Lukk undermeny"
+
+#: functions.php:200
+msgid "Expand child menu"
+msgstr "Utvid undermeny"
+
+#: functions.php:167
+msgid "Footer"
+msgstr "Bunntekst"
+
+#: functions.php:126
+msgid "medium gray"
+msgstr "middels grå"
+
+#: functions.php:121
+msgid "very dark gray"
+msgstr "veldig mørk grå"
+
+#: functions.php:106
+msgid "red"
+msgstr "rød"
+
+#: functions.php:52
+msgid "Primary"
+msgstr "Hovedblogg"
+
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:23
+msgid "Theme: %1$s by %2$s."
+msgstr "Temaet er %1$s av %2$s"
+
+#: footer.php:20
+msgid "https://wordpress.com/"
+msgstr "https://wordpress.com/"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "Stengt for kommentarer"
+
+#: comments.php:61
+msgid "Next"
+msgstr "Neste"
+
+#: comments.php:60
+msgid "Previous"
+msgstr "Forrige"
+
+#. translators: %1$s: smiley
+#: 404.php:47
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Prøv å se i de månedlige arkivene. %1$s"
+
+#: 404.php:31
+msgid "Most Used Categories"
+msgstr "Mest brukte kategorier"
+
+#: 404.php:22
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Det ble tydeligvis ikke funnet noe her. Kanskje forsøke en av lenkene under eller et søk?"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! Den siden finnes ikke."
