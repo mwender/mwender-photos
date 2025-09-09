@@ -1108,11 +1108,11 @@
         },
         {
             "name": "wenmark/elementor-pro",
-            "version": "3.31.2",
+            "version": "3.31.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.wenmarkdigital.com/satispress/elementor-pro/3.31.2",
-                "shasum": "2e70e340c31330156215a35d09965413fd37b8e2"
+                "url": "https://packages.wenmarkdigital.com/satispress/elementor-pro/3.31.3",
+                "shasum": "cd19a9ead3ffba11293dd5957e9ba26970e9d62d"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1168,15 +1168,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "3.31.3",
+            "version": "3.31.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/3.31.3"
+                "reference": "tags/3.31.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.3.31.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.31.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
