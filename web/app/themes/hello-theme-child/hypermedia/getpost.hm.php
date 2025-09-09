@@ -48,8 +48,7 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
   wp_reset_postdata();
 }
 ?>
-<title><?= $post_data['title'] ?> — <?= bloginfo('title') ?></title>
-
+<title><?= esc_html( $post_data['title'] ); ?> – <?= esc_html( bloginfo('title') ) ?></title>
 
 <div id="photo-skeleton" class="htmx-indicator">
     <h1 class="post-title skeleton" style="width: 50%; margin-left: auto; margin-right: auto;"></h1>
