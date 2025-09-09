@@ -142,6 +142,10 @@ Config::define('WP_DEBUG_LOG', false);
 Config::define('SCRIPT_DEBUG', false);
 ini_set('display_errors', '0');
 
+
+Config::define('WPCB_FP_PLUGIN_NAME', env('WPCB_FP_PLUGIN_NAME'));
+Config::define('WPCB_FP_PLUGIN_DESCRIPTION', env('WPCB_FP_PLUGIN_DESCRIPTION'));
+
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
