@@ -54,6 +54,7 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 	max-width: 800px;
 	margin: 50px auto;
 	display: none;
+	padding: 10px;
 }
 #photo-viewer .htmx-request#photo-skeleton{
 	display: block;
