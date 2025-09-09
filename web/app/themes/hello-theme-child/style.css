@@ -89,3 +89,11 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
     left: 100%;
   }
 }
+
+/**
+ * Core styles: block-supports
+ */
+.wp-block-gallery.wp-block-gallery-1 {
+	--wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );
+	gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );
+}
