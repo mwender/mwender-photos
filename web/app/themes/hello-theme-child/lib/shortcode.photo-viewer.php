@@ -68,7 +68,7 @@ function photo_viewer_shortcode( $atts ) {
 
 
     <div id="photo-viewer" 
-      hx-get="<?php echo esc_url( "/wp-html/v1/getpost?post_id={$post_id}" ); ?>" 
+      hx-get="<?= hm_get_endpoint_url("getpost?post_id={$post_id}") ?>" 
       hx-trigger="load"
       hx-indicator="#photo-skeleton">
 
