@@ -4,6 +4,9 @@ if ( ! hm_validate_request() ) {
     hm_die( 'Security check failed' );
 }
 
+if( 'development' == WP_ENVIRONMENT_TYPE )
+  sleep(3); 
+
 use function Photoblog\utilities\get_random_post_id;
 
 $post_data = [
