@@ -63,6 +63,12 @@ function photo_viewer_shortcode( $atts ) {
       }
     }
   });
+
+  document.body.addEventListener("htmx:beforeRequest", function(evt) {
+    if (evt.target.closest("#photo-nav")) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
 </script>
 
 

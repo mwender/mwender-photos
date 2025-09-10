@@ -120,7 +120,11 @@ if ( class_exists( 'AnalyticsWP' ) && method_exists( 'AnalyticsWP', 'track_serve
     $label = ucfirst( str_replace( '_post_id', '', $key ) );
     ?>
     <div class="col">
-      <a class="<?= implode( ' ', $classes ) ?>"<?php if( ! in_array( 'disabled', $classes ) ) echo ' href="#"' ?> hx-push-url="<?= get_permalink( $id ) ?>" hx-target="#photo-viewer" hx-get="<?= hm_get_endpoint_url("getpost/?post_id={$id}") ?>"><?= $label ?></a>
+      <a class="<?= implode( ' ', $classes ) ?>"<?php if( ! in_array( 'disabled', $classes ) ) echo ' href="#"' ?> 
+        hx-push-url="<?= get_permalink( $id ) ?>" 
+        hx-target="#photo-viewer" 
+        hx-get="<?= hm_get_endpoint_url("getpost/?post_id={$id}") ?>"
+      ><?= $label ?></a>
     </div>
     <?php
   }
