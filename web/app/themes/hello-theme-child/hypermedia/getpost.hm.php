@@ -47,6 +47,35 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
 
   wp_reset_postdata();
 }
+
+// Register a Page View
+// Make sure AnalyticsWP is loaded
+if ( class_exists( 'AnalyticsWP' ) && method_exists( 'AnalyticsWP', 'track_server_event' ) ) {
+
+    // Gather event context
+    $event_type = 'page_view';
+
+    // Prepare properties—override or add any relevant data
+    $args = [
+        'url'                   => get_permalink( $post_data['current_post_id'] ),          // Page URL (optional)
+        'user_id'               => get_current_user_id() ?: null,             // WordPress user ID (if logged in)
+        'unique_event_identifier' => 'post_' . get_the_ID() . '_' . time(),  // Avoid duplicates
+        'timestamp'             => gmdate( 'c' ),                             // ISO-8601 UTC timestamp
+        // Add any other context or custom data you want
+    ];
+
+    // Send the event to AnalyticsWP
+    $result = AnalyticsWP::track_server_event( $event_type, $args );
+
+    if ( is_array( $result ) && ! empty( $result['error'] ) ) {
+        error_log( 'AnalyticsWP event error: ' . $result['error'] );
+    } else {
+        // $result should be the event ID on success—optionally log it
+        // error_log( 'AnalyticsWP event tracked with ID: ' . $result );
+    }
+}
+
+
 ?>
 <title><?= esc_html( $post_data['title'] ); ?> – <?= esc_html( bloginfo('title') ) ?></title>
 
@@ -70,11 +99,11 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
     <p>
       <strong><?= esc_html( $post_data['title'] ); ?></strong> 
       was posted on 
-      <time><strong><?= esc_html( get_the_date( 'F j, Y', $hmvals['post_id'] ) ); ?></strong></time>.
+      <time><strong><?= esc_html( get_the_date( 'F j, Y', $post_data['current_post_id'] ) ); ?></strong></time>.
     </p>
 
     <?php
-    $tags_list = get_the_term_list( $hmvals['post_id'], 'post_tag', 'Tagged ', ', ' );
+    $tags_list = get_the_term_list( $post_data['current_post_id'], 'post_tag', 'Tagged ', ', ' );
     echo ( $tags_list )? '<p>' . $tags_list . '</p>' : '<p><!-- no tags --></p>' ;
     ?>
   </div>
