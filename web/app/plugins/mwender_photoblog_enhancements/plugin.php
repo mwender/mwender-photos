@@ -24,7 +24,7 @@ $preconditions->output_autoreload();
 
 include_once 'snippets/4_3_image.php';
 include_once 'snippets/add_post_thumbnail_to_rss.php';
-include_once 'snippets/global_scss_inline_css.php';
+// include_once 'snippets/global_scss_inline_css.php';
 include_once 'snippets/post_streak_shortcode.php';
 include_once 'snippets/latest_post_id.php';
 include_once 'snippets/current_post_id_shortcode.php';

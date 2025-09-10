@@ -30,6 +30,11 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 	}
 }
 
+/**
+ * Post Info block
+ *
+ * Appears below a single post.
+ */
 .post-info{
 	border: 1px solid #dcdcdc;
 	border-width: 1px 0;
@@ -38,28 +43,141 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 	font-weight: 400;
 	font-size: 16px;
 	font-family: Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-}
-.post-info strong,
-.post-info a{
-	font-weight: 600;
-}
-.post-info p{
-	margin-bottom: .25em;
-}
-.post-info p:last-child{
-	margin-bottom: 0;
+
+	strong,
+	a{
+		font-weight: bold;
+	}	
+
+	p{
+		margin-bottom: .25em;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
 }
 
-#photo-viewer #photo-skeleton{
-	max-width: 800px;
-	margin: 50px auto;
-	display: none;
-	padding: 10px;
-}
-#photo-viewer .htmx-request#photo-skeleton{
-	display: block;
+#photo-viewer{
+	#photo-skeleton{
+		max-width: 800px;
+		margin: 50px auto;
+		display: none;
+		padding: 10px;		
+
+		&.htmx-request{
+			display: block;
+		}
+	}
 }
 
+@media (max-width: 840px){
+	#photo-viewer{
+		#photo-skeleton{
+			margin: 0 auto;
+		}
+	}
+}
+
+/**
+ * Originally in WPCodeBox
+ */
+.elementor-button.disabled {
+  background-color: #eee;
+  color: #999;
+}
+
+/* Photo Viewer */
+.post #photo-viewer {
+  .post-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+
+    @media (max-width: 840px) {
+      margin-bottom: 0.25em;
+    }
+  }
+
+  #photo-viewer-content {
+    max-width: 800px;
+    margin: 50px auto;
+
+    @media (max-width: 840px) {
+      padding: 10px;
+      margin: 0 auto;
+    }
+  }
+
+  .attachment-photos-featured {
+    margin-bottom: 1em;
+    max-height: none;
+  }
+
+  .photo-viewer-featured-image {
+    display: block; /* puts it on its own line */
+    width: 100%; /* stretch to the parent’s width */
+    max-width: 100%; /* never overflow the parent */
+    height: auto; /* keep the aspect ratio */
+    margin: 1em 0; /* optional spacing */
+    max-height: none;
+  }
+
+  figure {
+    margin: 2em 0;
+
+    img.disabled {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  #photo-nav {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #7a7a7a;
+    width: 100%;
+    padding: 20px;
+    z-index: 99;
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 840px) {
+      padding: 5px;
+      gap: 0.25rem;
+    }
+
+    .col {
+      flex: 1;
+      display: flex;
+
+      .elementor-button {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  }
+
+  .wp-block-separator {
+    margin: 1em 0 1.5em 0;
+  }
+}
+
+/* Misc */
+.elementor-element blockquote {
+  padding: 1em 1.5em;
+  background-color: #f0f0f0;
+  font-style: italic;
+  margin: 0 0 1.5em;
+  border-left: 4px solid #d63031;
+}
+/* END WPCodeBox */
+
+/**
+ * Skeleton styling
+ */
 .skeleton {
   background-color: #e2e2e2;
   border-radius: 4px;
