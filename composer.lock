@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fad14849fa3b62cc02723fd14962fc06",
+    "content-hash": "df5748ba6c5e3ee624b9dbacd46bcb29",
     "packages": [
         {
             "name": "composer/installers",
@@ -1201,6 +1201,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/limit-login-attempts-reloaded/"
+        },
+        {
+            "name": "wpackagist-plugin/meow-gallery",
+            "version": "5.3.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/meow-gallery/",
+                "reference": "tags/5.3.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/meow-gallery.5.3.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/meow-gallery/"
         },
         {
             "name": "wpackagist-plugin/spinupwp",
