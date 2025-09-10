@@ -53,27 +53,27 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
 
 // Register a Page View
 // Make sure AnalyticsWP is loaded
-if ( class_exists( 'AnalyticsWP' ) && method_exists( 'AnalyticsWP', 'track_server_event' ) ) {
+if ( class_exists( '\AnalyticsWP\Lib\Event' ) && method_exists( '\AnalyticsWP\Lib\Event', 'track_server_event' ) ) {
 
-    // Gather event context
     $event_type = 'page_view';
 
-    // Prepare properties—override or add any relevant data
     $args = [
-        'url'                   => get_permalink( $post_data['current_post_id'] ),          // Page URL (optional)
-        'user_id'               => get_current_user_id() ?: null,             // WordPress user ID (if logged in)
-        'unique_event_identifier' => 'post_' . get_the_ID() . '_' . time(),  // Avoid duplicates
-        'timestamp'             => gmdate( 'c' ),                             // ISO-8601 UTC timestamp
-        // Add any other context or custom data you want
+        'page_url'                => get_permalink( $post_data['current_post_id'] ),
+        'unique_event_identifier' => 'post_' . $post_data['current_post_id'] . '_' . time(),
+        'timestamp'               => gmdate( 'c' ),
+
+        // Optional extras
+        'user_id'    => get_current_user_id() ?: null,
+        'referrer'   => $_SERVER['HTTP_REFERER'] ?? null,
+        'device_type'=> wp_is_mobile() ? 'mobile' : 'desktop',
     ];
 
-    // Send the event to AnalyticsWP
-    $result = AnalyticsWP::track_server_event( $event_type, $args );
+    $result = \AnalyticsWP\Lib\Event::track_server_event( $event_type, $args );
 
     if ( is_array( $result ) && ! empty( $result['error'] ) ) {
         error_log( 'AnalyticsWP event error: ' . $result['error'] );
     } else {
-        // $result should be the event ID on success—optionally log it
+        // $result is event ID on success
         // error_log( 'AnalyticsWP event tracked with ID: ' . $result );
     }
 }
