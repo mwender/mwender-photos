@@ -56,9 +56,10 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
 if ( class_exists( '\AnalyticsWP\Lib\Event' ) && method_exists( '\AnalyticsWP\Lib\Event', 'track_server_event' ) ) {
 
     $event_type = 'page_view';
+    $page_url = get_permalink( $post_data['current_post_id'] );
 
     $args = [
-        'page_url'                => get_permalink( $post_data['current_post_id'] ),
+        'page_url'                => $page_url,
         'unique_event_identifier' => 'post_' . $post_data['current_post_id'] . '_' . time(),
         'timestamp'               => gmdate( 'c' ),
 
@@ -68,7 +69,8 @@ if ( class_exists( '\AnalyticsWP\Lib\Event' ) && method_exists( '\AnalyticsWP\Li
         'device_type'=> wp_is_mobile() ? 'mobile' : 'desktop',
     ];
 
-    $result = \AnalyticsWP\Lib\Event::track_server_event( $event_type, $args );
+    if( $page_url != $_SERVER['HTTP_REFERER'] )
+      $result = \AnalyticsWP\Lib\Event::track_server_event( $event_type, $args );
 
     if ( is_array( $result ) && ! empty( $result['error'] ) ) {
         error_log( 'AnalyticsWP event error: ' . $result['error'] );
