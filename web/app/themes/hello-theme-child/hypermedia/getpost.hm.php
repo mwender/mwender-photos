@@ -61,7 +61,7 @@ foreach ( $post_data['nav_post_ids'] as $post_id ) {
     $image_url = get_the_post_thumbnail_url( $post_id, 'full' );
     if ( $image_url ) {
         printf(
-            '<link rel="preload" as="image" href="%s" data-preload="nav-image" id="preload-%d">' . "\n",
+            '<link rel="prefetch" as="image" href="%s" data-preload="nav-image" id="preload-%d">' . "\n",
             esc_url( $image_url ),
             (int) $post_id
         );
