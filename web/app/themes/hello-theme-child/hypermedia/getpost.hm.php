@@ -7,7 +7,7 @@ if ( ! hm_validate_request() ) {
 if( 'development' == WP_ENVIRONMENT_TYPE )
   sleep(3); 
 
-use function Photoblog\utilities\get_random_post_id;
+use function Photoblog\utilities\{get_random_post_id,send_analyticswp_event};
 
 $post_data = [
   'title'             => 'Post Title Goes Here...',
@@ -51,37 +51,25 @@ if ( is_numeric( $hmvals['post_id'] ) ) {
   wp_reset_postdata();
 }
 
-// Register a Page View
-// Make sure AnalyticsWP is loaded
-if ( class_exists( '\AnalyticsWP\Lib\Event' ) && method_exists( '\AnalyticsWP\Lib\Event', 'track_server_event' ) ) {
-
-    $event_type = 'page_view';
-    $page_url = get_permalink( $post_data['current_post_id'] );
-
-    $args = [
-        'page_url'                => $page_url,
-        'unique_event_identifier' => 'post_' . $post_data['current_post_id'] . '_' . time(),
-        'timestamp'               => gmdate( 'c' ),
-
-        // Optional extras
-        'user_id'    => get_current_user_id() ?: null,
-        'referrer'   => $_SERVER['HTTP_REFERER'] ?? null,
-        'device_type'=> wp_is_mobile() ? 'mobile' : 'desktop',
-    ];
-
-    if( $page_url != $_SERVER['HTTP_REFERER'] )
-      $result = \AnalyticsWP\Lib\Event::track_server_event( $event_type, $args );
-
-    if ( is_array( $result ) && ! empty( $result['error'] ) ) {
-        error_log( 'AnalyticsWP event error: ' . $result['error'] );
-    } else {
-        // $result is event ID on success
-        // error_log( 'AnalyticsWP event tracked with ID: ' . $result );
-    }
-}
+send_analyticswp_event( $post_data['current_post_id'] );
 
 
 ?>
+<!-- Preload Next/Prev/Random Featured Images -->
+<?php
+foreach ( $post_data['nav_post_ids'] as $post_id ) {
+    $image_url = get_the_post_thumbnail_url( $post_id, 'full' );
+    if ( $image_url ) {
+        printf(
+            '<link rel="preload" as="image" href="%s" data-preload="nav-image" id="preload-%d">' . "\n",
+            esc_url( $image_url ),
+            (int) $post_id
+        );
+    }
+}
+?>
+<!-- END Preload -->
+
 <title><?= esc_html( $post_data['title'] ); ?> – <?= esc_html( bloginfo('title') ) ?></title>
 
 <div id="photo-skeleton" class="htmx-indicator">
