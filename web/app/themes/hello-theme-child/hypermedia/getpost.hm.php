@@ -1,10 +1,7 @@
 <?php
 // Basic nonce validation (works for all hypermedia libraries)
-if ( ! hm_validate_request( $_GET ) ) {
-  uber_log('🔔 $_GET = ', $_GET );
-  uber_log('👉 $_SERVER[\'HTTP_X_WP_NONCE\'] = ', $_SERVER['HTTP_X_WP_NONCE'] );
-
-  hm_die( 'Security check failed. $_GET = ' . print_r( $_GET, true ) . '; HTTP_X_WP_NONCE = ' . $_SERVER['HTTP_X_WP_NONCE'] );
+if ( ! hm_validate_request() ) {
+  hm_die( 'Security check failed. If the HTTP_X_WP_NONCE (i.e. `'. $_SERVER['HTTP_X_WP_NONCE'] .'`) getting cached?' );
 }
 
 if( 'development' == WP_ENVIRONMENT_TYPE )
