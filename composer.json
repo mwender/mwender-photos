@@ -52,7 +52,8 @@
     "wpackagist-theme/hello-elementor": "^3.4",
     "lukasbesch/bedrock-plugin-disabler": "^1.4",
     "wpackagist-plugin/api-for-htmx": "^2.0",
-    "wpackagist-plugin/meow-gallery": "^5.3"
+    "wpackagist-plugin/meow-gallery": "^5.3",
+    "wpackagist-plugin/cimo-image-optimizer": "^1.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
