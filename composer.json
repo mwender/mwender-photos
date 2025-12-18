@@ -53,7 +53,8 @@
     "lukasbesch/bedrock-plugin-disabler": "^1.4",
     "wpackagist-plugin/api-for-htmx": "^2.0",
     "wpackagist-plugin/meow-gallery": "^5.3",
-    "wpackagist-plugin/cimo-image-optimizer": "^1.2"
+    "wpackagist-plugin/cimo-image-optimizer": "^1.2",
+    "wpackagist-plugin/redirection": "^5.5"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

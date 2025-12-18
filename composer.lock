@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f6f3551ef7ff87624d4c2dc49bc9f7e",
+    "content-hash": "d56f396ae553239e84d3418007672491",
     "packages": [
         {
             "name": "composer/installers",
@@ -1237,6 +1237,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/meow-gallery/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "5.5.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/5.5.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/spinupwp",
